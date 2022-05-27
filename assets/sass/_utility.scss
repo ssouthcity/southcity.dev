@@ -1,0 +1,7 @@
+.wrapper {
+    padding-inline: 2rem;
+}
+
+.flow > * + * {
+    margin-top: var(--flow-spacer, 1em);
+}

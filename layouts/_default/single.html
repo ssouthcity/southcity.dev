@@ -1,16 +1,18 @@
 {{ define "main" }}
-<main>
-    <time datetime="{{ .Params.Date.Format "2006-01-02" }}">{{ .Params.Date.Format "2006/01/02" }}</time>
-    <h1>{{ .Params.Title }}</h1>
-    <ul>
-        {{ range (.GetTerms "tags") }}
-            <li>
+<main class="flow">
+    <header>
+        <time datetime="{{ .Params.Date.Format "2006-01-02" }}">{{ .Params.Date.Format "2006/01/02" }}</time>
+        <h1>{{ .Params.Title }}</h1>
+        <ul class="tag-list">
+            {{ range (.GetTerms "tags") }}
+            <li class="tag">
                 <a href="{{ .Permalink }}">
                     {{ .LinkTitle }}
                 </a>
             </li>
-        {{ end }}
-    </ul>
+            {{ end }}
+        </ul>
+    </header>
     {{ .Content }}
 </main>
 {{ end }}

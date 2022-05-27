@@ -1,0 +1,16 @@
+$colors: ("primary": ("400": #2D3047),
+        "accent": ("400": #FFB470),
+        "text": ("400": #030303),
+        "neutral": ("400": #FAFAFA));
+
+@each $name, $accents in $colors {
+    @each $key, $val in $accents {
+        .bg-#{$name}-#{$key} {
+            background-color: $val;
+        }
+
+        .clr-#{$name}-#{$key} {
+            color: $val;
+        }
+    }
+}

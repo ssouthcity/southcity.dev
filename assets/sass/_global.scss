@@ -1,0 +1,22 @@
+h1,
+h2,
+h3 {
+    font-family: "Anton", serif;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 8rem;
+        height: 1rem;
+        @extend .bg-accent-400;
+    }
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+svg {
+    width: 2rem;
+    height: 2rem;
+}
