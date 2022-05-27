@@ -8,15 +8,36 @@
 
     {{ $style := resources.Get "sass/main.scss" | toCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
+
+    <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
     
-    <header></header>
+    <header>
+        <i data-feather="menu"></i>
+    </header>
 
     {{ block "main" . }}
     {{ end }}
 
-    <footer></footer>
+    <footer>
+        <ul>
+            {{ range .Site.Data.contact.link }}
+            <li>
+                <a href="{{ .url }}" aria-label="{{ .name }}">
+                    <i data-feather="{{ .icon }}"></i>
+                </a>
+            </li>
+            {{ end }}
+        </ul>
+        <small>
+            Copyright &copy; Stian Sørby <time datetime="{{ .Date.Year }}">{{ .Date.Year }}</time>
+        </small>
+    </footer>
+
+    <script>
+        feather.replace()
+    </script>
 
 </body>
 </html>

@@ -1,0 +1,14 @@
+[[ link ]]
+name = "email"
+icon = "mail"
+url = "mailto:stian@southcity.dev"
+
+[[ link ]]
+name = "github"
+icon = "github"
+url = "github.com/ssouthcity"
+
+[[ link ]]
+name = "linkedin"
+icon = "linkedin"
+url = "#"
