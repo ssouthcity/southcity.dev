@@ -1,7 +1,15 @@
 .wrapper {
     padding-inline: 2rem;
+    max-width: 70ch;
+    margin-inline: auto;
 }
 
 .flow > * + * {
-    margin-top: var(--flow-spacer, 1em);
+    margin-block-start: var(--flow-spacer, 1em);
+}
+
+.side-by-side {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
