@@ -3,7 +3,7 @@
     <header>
         <time datetime="{{ .Params.Date.Format "2006-01-02" }}">{{ .Params.Date.Format "2006/01/02" }}</time>
         <h1>{{ .Params.Title }}</h1>
-        <ul class="tag-list | side-by-side">
+        <ul class="side-by-side" role="list">
             {{ range (.GetTerms "tags") }}
             <li class="tag">
                 <a href="{{ .RelPermalink }}">
