@@ -6,7 +6,7 @@
         <ul class="tag-list">
             {{ range (.GetTerms "tags") }}
             <li class="tag">
-                <a href="{{ .Permalink }}">
+                <a href="{{ .RelPermalink }}">
                     {{ .LinkTitle }}
                 </a>
             </li>
