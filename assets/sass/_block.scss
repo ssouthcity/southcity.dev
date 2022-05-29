@@ -34,3 +34,8 @@
         text-decoration: none;
     }
 }
+
+.card {
+    padding: 2em 1.5em;
+    border: 2px dashed map-get(map-get($colors, "text"), 400);
+}

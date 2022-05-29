@@ -1,11 +1,16 @@
 {{ define "main" }}
-<main>
-    <ul>
+<main class="flow">
+    <h1>My Blog</h1>
+    <ul role="list" class="flow">
         {{ range .Pages }}
             <li>
-                <a href="{{ .RelPermalink }}">
-                    {{ .Title }}
-                </a>
+                <article class="card | flow">
+                    <h2>{{ .Title }}</h2>
+                    <p>{{ substr .RawContent 0 300 }}...</p>
+                    <a href="{{ .RelPermalink }}">
+                        Read article
+                    </a>
+                </article>
             </li>
         {{ end }}
     </ul>
