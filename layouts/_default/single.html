@@ -1,8 +1,8 @@
 {{ define "main" }}
-<main class="flow">
+<main class="blog-post">
     <header>
         <time datetime="{{ .Params.Date.Format "2006-01-02" }}">{{ .Params.Date.Format "2006/01/02" }}</time>
-        <h1>{{ .Params.Title }}</h1>
+        <h1>{{ .Title }}</h1>
         <ul class="side-by-side" role="list">
             {{ range (.GetTerms "tags") }}
             <li class="tag">
@@ -13,6 +13,8 @@
             {{ end }}
         </ul>
     </header>
-    {{ .Content }}
+    <div class="flow">
+        {{ .Content }}
+    </div>
 </main>
 {{ end }}
