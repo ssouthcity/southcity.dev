@@ -1,6 +1,6 @@
 {{ define "main" }}
 <main class="flow">
-    <h1 class="partial-underline">My Blog</h1>
+    <h1 class="partial-underline">{{ .Title }}</h1>
     <ul role="list" class="flow">
         {{ range .Pages }}
             <li>
