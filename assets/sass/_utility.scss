@@ -17,16 +17,21 @@
 .side-by-side {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: var(--side-by-side-spacer, 1em);
 }
 
-.invis-btn {
-    padding: .5em;
-    border: none;
-    background: none;
+.unstyled-btn {
+    all: unset;
     cursor: pointer;
+}
 
-    svg {
+.partial-underline {
+    &::after {
+        content: "";
         display: block;
+        width: 30%;
+        height: 16px;
+        margin-block-start: .25em;
+        @extend .bg-accent-400;
     }
 }

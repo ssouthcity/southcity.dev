@@ -12,15 +12,6 @@ h3 {
 
 h1 {
     font-size: 2.5rem;
-
-    &::after {
-        content: "";
-        display: block;
-        width: 30%;
-        height: 16px;
-        margin-block-start: .25em;
-        @extend .bg-accent-400;
-    }
 }
 
 h2 {
@@ -32,6 +23,7 @@ h3 {
 }
 
 svg {
+    display: block;
     width: 2rem;
     height: 2rem;
 }
@@ -40,7 +32,9 @@ a {
     display: inline-block;
 }
 
-*:focus {
-    outline: 2px dashed map-get(map-get($colors, "text"), 400) !important;
+:focus {
+    outline-width: 2px !important;
+    outline-style: dashed !important;
+    outline-color: map-get(map-get($colors, "text"), "400") !important;
     outline-offset: 8px !important;
 }
