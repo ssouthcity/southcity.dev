@@ -39,3 +39,8 @@ svg {
 a {
     display: inline-block;
 }
+
+*:focus {
+    outline: 2px dashed map-get(map-get($colors, "text"), 400) !important;
+    outline-offset: 8px !important;
+}

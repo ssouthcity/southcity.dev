@@ -17,8 +17,14 @@
 .blog-post {
     --flow-spacer: 1.5em;
 
-    header {
+    header,
+    footer {
         margin-block: 2em;
+    }
+
+    footer span {
+        display: block;
+        font-size: 1.2em;
     }
 }
 
@@ -38,4 +44,17 @@
 .card {
     padding: 2em 1.5em;
     border: 2px dashed map-get(map-get($colors, "text"), 400);
+}
+
+.social-links {
+    display: flex;
+    gap: 2em;
+
+    a {
+        @extend .clr-text-400;
+
+        &:hover {
+            @extend .clr-accent-400;
+        }
+    }
 }

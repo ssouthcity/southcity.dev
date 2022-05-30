@@ -16,5 +16,23 @@
     <div class="flow">
         {{ .Content }}
     </div>
+    <footer class="splitter">
+        <div>
+            {{ if .Prev }}
+            <span>Previous</span>
+            <a href="{{ .Prev.RelPermalink }}">
+                {{ .Prev.Title }}
+            </a>
+            {{ end }}
+        </div>
+        <div>
+            {{ if .Next }}
+            <span>Next</span>
+            <a href="{{ .Next.RelPermalink }}">
+                {{ .Next.Title }}
+            </a>
+            {{ end }}
+        </div>
+    </footer>
 </main>
 {{ end }}

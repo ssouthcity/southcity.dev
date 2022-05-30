@@ -8,6 +8,12 @@
     margin-block-start: var(--flow-spacer, 1em);
 }
 
+.splitter {
+    display: flex;
+    justify-content: space-between;
+    gap: 2em;
+}
+
 .side-by-side {
     display: flex;
     flex-wrap: wrap;
