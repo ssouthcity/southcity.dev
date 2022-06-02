@@ -20,18 +20,18 @@
     </div>
     <footer class="columns">
         <div>
-            {{ if .Prev }}
+            {{ if .PrevInSection }}
             <span>Previous</span>
-            <a href="{{ .Prev.RelPermalink }}">
-                {{ .Prev.Title }}
+            <a href="{{ .PrevInSection.RelPermalink }}">
+                {{ .PrevInSection.Title }}
             </a>
             {{ end }}
         </div>
         <div>
-            {{ if .Next }}
+            {{ if .NextInSection }}
             <span>Next</span>
-            <a href="{{ .Next.RelPermalink }}">
-                {{ .Next.Title }}
+            <a href="{{ .NextInSection.RelPermalink }}">
+                {{ .NextInSection.Title }}
             </a>
             {{ end }}
         </div>

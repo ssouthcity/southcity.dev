@@ -5,6 +5,7 @@ tags:
     - CSS
     - HTML
     - UX
+thumbnail: ./custom_variables.png
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec sodales urna. Vestibulum sit amet odio neque. Donec laoreet felis at ultricies scelerisque. Nunc tincidunt, enim vitae commodo efficitur, nisl purus commodo enim, id malesuada magna massa faucibus ipsum. Vestibulum tincidunt ante quis interdum rutrum. Nam quis sapien tortor. Fusce id vulputate dui. Donec quis gravida tortor, eget consequat ligula. Curabitur commodo nunc sed nulla gravida, sed elementum nulla rhoncus. Vestibulum vehicula fermentum purus et interdum. Pellentesque et ornare tortor. Integer vel placerat lectus, id rhoncus sem.
 

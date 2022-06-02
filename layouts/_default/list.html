@@ -6,10 +6,20 @@
             <li>
                 <article class="card | flow">
                     <h2>{{ .Title }}</h2>
-                    <p>{{ substr .RawContent 0 300 }}...</p>
-                    <a href="{{ .RelPermalink }}">
-                        Read article
-                    </a>
+                    <p>{{ .Summary }}</p>
+                    <div class="side-by-side">
+                        {{ if .Params.links }}
+                            {{ range $key, $val := .Params.links }}
+                            <a href="{{ $val }}">
+                                {{ $key | humanize }}
+                            </a>
+                            {{ end }}
+                        {{ else }}
+                        <a href="{{ .RelPermalink }}">
+                            Read article
+                        </a>
+                        {{ end }}
+                    </div>
                 </article>
             </li>
         {{ end }}
