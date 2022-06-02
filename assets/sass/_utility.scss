@@ -14,6 +14,15 @@
     gap: 2em;
 }
 
+.columns {
+    display: flex;
+    gap: 2em;
+
+    > * {
+        width: 100%;
+    }
+}
+
 .side-by-side {
     display: flex;
     flex-wrap: wrap;

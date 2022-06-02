@@ -32,6 +32,15 @@ a {
     display: inline-block;
 }
 
+pre {
+    overflow-x: scroll;
+
+    code {
+        display: inline-block;
+        margin: 1em;
+    }
+}
+
 :focus {
     outline-width: 2px !important;
     outline-style: dashed !important;
