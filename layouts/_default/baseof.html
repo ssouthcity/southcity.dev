@@ -35,7 +35,9 @@
             {{ end }}
         </ul>
         <small>
-            Copyright &copy; Stian Sørby <time datetime="{{ .Date.Year }}">{{ .Date.Year }}</time>
+            {{ with now.Year }}
+            Copyright &copy; Stian Sørby <time datetime="{{ . }}">{{ . }}</time>
+            {{ end }}
         </small>
     </footer>
 
