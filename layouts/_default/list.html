@@ -8,12 +8,10 @@
                     <h2>{{ .Title }}</h2>
                     <p>{{ .Summary }}</p>
                     <div class="side-by-side">
-                        {{ if .Params.links }}
-                            {{ range $key, $val := .Params.links }}
-                            <a href="{{ $val }}">
-                                {{ $key | humanize }}
-                            </a>
-                            {{ end }}
+                        {{ range $key, $val := .Params.links }}
+                        <a href="{{ $val }}">
+                            {{ $key | humanize }}
+                        </a>
                         {{ else }}
                         <a href="{{ .RelPermalink }}">
                             Read article
