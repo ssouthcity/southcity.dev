@@ -16,6 +16,9 @@
         </ul>
     </header>
     <div class="flow">
+        {{ with .Resources.GetMatch "thumbnail.png" }}
+        <img src="{{ .RelPermalink }}" alt="" />
+        {{ end }}
         {{ .Content }}
     </div>
     <footer class="columns">

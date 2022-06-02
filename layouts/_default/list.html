@@ -5,6 +5,9 @@
         {{ range .Pages }}
             <li>
                 <article class="card | flow">
+                    {{ with .Resources.GetMatch "thumbnail.png" }}
+                    <img src="{{ .RelPermalink }}" alt="" />
+                    {{ end }}
                     <h2>{{ .Title }}</h2>
                     <p>{{ .Summary }}</p>
                     <div class="side-by-side">

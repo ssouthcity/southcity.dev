@@ -43,6 +43,13 @@
 .card {
     padding: 2em 1.5em;
     border: 2px dashed map-get(map-get($colors, "text"), 400);
+
+    img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        object-position: center;
+    }
 }
 
 .social-links {
