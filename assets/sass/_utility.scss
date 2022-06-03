@@ -24,7 +24,7 @@
 }
 
 .side-by-side {
-    display: flex;
+    display: inline-flex;
     flex-wrap: wrap;
     gap: var(--side-by-side-spacer, 1em);
 }

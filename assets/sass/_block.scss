@@ -55,3 +55,33 @@
 .social-links {
     --side-by-side-spacer: 2em;
 }
+
+.nameplate {
+    h1 {
+        font-size: 4em;
+    }
+
+    p {
+        font-size: 2em;
+    }
+}
+
+.home {
+    --flow-spacer: 2em;
+
+    padding-block: 2em;
+
+    img {
+        border: 2px dashed map-get(map-get($colors, "text"), "400");
+        padding: .5em;
+    }
+}
+
+.btn {
+    text-decoration: none;
+    @extend .bg-primary-400;
+    @extend .clr-neutral-400;
+    padding: 1em 2em;
+
+    font-weight: bold;
+}

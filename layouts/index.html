@@ -1,0 +1,18 @@
+{{ define "main" }}
+<main class="home | flow">
+    <header class="nameplate">
+        <h1>Stian Sørby</h1>
+        <p>Fullstack Developer</p>
+    </header>
+    <img src="https://picsum.photos/600" alt="">
+    <ul class="side-by-side" role="list">
+        {{ range .Pages }}
+        <li>
+            <a class="btn" href="{{ .RelPermalink }}">
+                {{ .Title }}
+            </a>
+        </li>
+        {{ end }}
+    </ul>
+</main>
+{{ end }}
