@@ -9,7 +9,7 @@ collections:
   - name: "blog"
     label: "Blog"
     folder: "content/blog"
-    path: "{{slug}}/index.md"
+    path: "{{slug}}/index"
     media_folder: ""
     public_folder: ""
     create: true

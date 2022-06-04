@@ -1,6 +1,7 @@
 ---
 title: Using CUBE CSS to do more with less code
 date: 2022-05-20
+thumbnail: thumbnail.png
 tags:
     - CSS
     - HTML

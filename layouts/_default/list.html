@@ -5,8 +5,10 @@
         {{ range .Pages }}
             <li>
                 <article class="card | flow">
-                    {{ with .Resources.GetMatch "thumbnail.png" }}
+                    {{ if .Params.thumbnail }}
+                    {{ with .Resources.GetMatch .Params.thumbnail }}
                     <img src="{{ .RelPermalink }}" alt="" />
+                    {{ end }}
                     {{ end }}
                     <h2>{{ .Title }}</h2>
                     <p>{{ .Summary }}</p>
