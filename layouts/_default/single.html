@@ -16,8 +16,10 @@
         </ul>
     </header>
     <div class="flow">
-        {{ with .Resources.GetMatch "thumbnail.png" }}
+        {{ if .Params.thumbnail }}
+        {{ with .Resources.GetMatch .Params.thumbnail }}
         <img src="{{ .RelPermalink }}" alt="" />
+        {{ end }}
         {{ end }}
         {{ .Content }}
     </div>
