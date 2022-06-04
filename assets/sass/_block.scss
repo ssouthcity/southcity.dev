@@ -33,7 +33,6 @@
     @extend .bg-primary-400;
 
     a {
-        display: block;
         padding: .5rem 1rem;
         @extend .clr-neutral-400;
         text-decoration: none;
@@ -41,8 +40,8 @@
 }
 
 .card {
+    @extend .border;
     padding: 2em 1.5em;
-    border: 2px dashed map-get(map-get($colors, "text"), 400);
 
     img {
         width: 100%;
@@ -70,11 +69,6 @@
     --flow-spacer: 2em;
 
     padding-block: 2em;
-
-    img {
-        border: 2px dashed map-get(map-get($colors, "text"), "400");
-        padding: .5em;
-    }
 }
 
 .btn {

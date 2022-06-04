@@ -42,8 +42,6 @@ pre {
 }
 
 :focus {
-    outline-width: 2px !important;
-    outline-style: dashed !important;
-    outline-color: map-get(map-get($colors, "text"), "400") !important;
+    outline: 2px dashed var(--clr-text-400) !important;
     outline-offset: 8px !important;
 }

@@ -4,15 +4,17 @@
         <h1>Stian Sørby</h1>
         <p>Fullstack Developer</p>
     </header>
-    <img src="https://picsum.photos/600" alt="">
-    <ul class="side-by-side" role="list">
-        {{ range .Pages }}
-        <li>
-            <a class="btn" href="{{ .RelPermalink }}">
-                {{ .Title }}
-            </a>
-        </li>
-        {{ end }}
-    </ul>
+    <img class="border" src="https://picsum.photos/600" alt="">
+    <nav>
+        <ul class="side-by-side" role="list">
+            {{ range .Pages }}
+            <li>
+                <a class="btn" href="{{ .RelPermalink }}">
+                    {{ .Title }}
+                </a>
+            </li>
+            {{ end }}
+        </ul>
+    </nav>
 </main>
 {{ end }}

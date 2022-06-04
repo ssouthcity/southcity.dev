@@ -13,6 +13,10 @@ $sizes: ("300": $size-base * 0.8,
 
 @each $name, $weights in $colors {
     @each $weight, $val in $weights {
+        :root {
+            --clr-#{$name}-#{$weight}: #{$val};
+        }
+
         .bg-#{$name}-#{$weight} {
             background-color: $val;
         }

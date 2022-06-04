@@ -44,3 +44,8 @@
         @extend .bg-accent-400;
     }
 }
+
+.border {
+    border: 2px dashed var(--clr-text-400);
+    padding: 1em;
+}
