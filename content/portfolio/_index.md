@@ -1,5 +1,5 @@
 ---
-title: My Work
+title: Portfolio
 _build:
   render: true
 cascade:
