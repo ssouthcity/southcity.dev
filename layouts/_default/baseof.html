@@ -8,13 +8,16 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton|Roboto">
 
-    {{ $style := resources.Get "sass/main.scss" | toCSS | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
+    {{/*  {{ $style := resources.Get "sass/main.scss" | toCSS | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">  */}}
+
+    {{ $stylesheet := resources.Match "css/*.css" | resources.Concat "css/bundle.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $stylesheet.RelPermalink }}" integrity="{{ $stylesheet.Data.Integrity }}">
 
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body class="wrapper | bg-neutral-400 clr-text-400">
-    
+
     <header class="site-head">
         <button class="unstyled-btn">
             <i data-feather="menu"></i>

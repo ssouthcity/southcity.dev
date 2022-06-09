@@ -1,0 +1,7 @@
+.stylish-underline::after {
+    content: "";
+    display: block;
+    width: 7ch;
+    height: calc(var(--ratio) / 2);
+    background-color: var(--clr-primary-400);
+}

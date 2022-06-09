@@ -2,7 +2,7 @@
 <main class="blog-post">
     <header>
         <time datetime="{{ .Params.Date.Format "2006-01-02" }}">{{ .Params.Date.Format "2006/01/02" }}</time>
-        <h1 class="partial-underline">{{ .Title }}</h1>
+        <h1 class="stylish-underline">{{ .Title }}</h1>
         <ul class="side-by-side" role="list">
             {{ range (.GetTerms "tags") }}
             <li>

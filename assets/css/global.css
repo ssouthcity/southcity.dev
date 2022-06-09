@@ -1,0 +1,11 @@
+:root {
+    --clr-primary-400: #FFB470;
+
+    --ratio: 1.6rem;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
