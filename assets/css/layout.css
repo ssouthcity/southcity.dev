@@ -1,3 +1,25 @@
 .stack > * + * {
-    margin-block-start: var(--stack-space, var(--ratio));
+    margin-block-start: var(--stack-space, var(--scale-0));
+}
+
+.cluster {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--cluster-space, var(--scale-0));
+}
+
+.cluster[data-side="right"] {
+    justify-content: flex-end;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    padding-inline: var(--scale-2);
+    max-width: 70ch;
+    margin-inline: auto;
 }

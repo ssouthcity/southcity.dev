@@ -1,12 +1,12 @@
 {{ define "main" }}
-<main class="home | flow">
-    <header class="nameplate">
+<main class="home | stack">
+    <header>
         <h1>Stian Sørby</h1>
         <p>Fullstack Developer</p>
     </header>
     <img class="border" src="https://picsum.photos/600" alt="">
     <nav>
-        <ul class="side-by-side" role="list">
+        <ul class="cluster" role="list">
             {{ range .Pages }}
             <li>
                 <a class="btn" href="{{ .RelPermalink }}">

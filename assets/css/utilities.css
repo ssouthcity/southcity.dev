@@ -5,3 +5,16 @@
     height: calc(var(--ratio) / 2);
     background-color: var(--clr-primary-400);
 }
+
+.nostyle {
+    all: unset;
+}
+
+[data-clickable] {
+    cursor: pointer;
+}
+
+.border {
+    border: 2px dashed var(--clr-text-400);
+    padding: var(--scale-0);
+}

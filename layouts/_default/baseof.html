@@ -16,33 +16,38 @@
 
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
-<body class="wrapper | bg-neutral-400 clr-text-400">
+<body>
 
-    <header class="site-head">
-        <button class="unstyled-btn">
-            <i data-feather="menu"></i>
-        </button>
-    </header>
+    <div class="container">
 
-    {{ block "main" . }}
-    {{ end }}
-
-    <footer class="site-feet">
-        <ul class="social-links | side-by-side" role="list">
-            {{ range .Site.Data.contact.link }}
-            <li>
-                <a class="unstyled-btn" href="{{ .url }}" aria-label="{{ .name }}">
-                    <i data-feather="{{ .icon }}"></i>
-                </a>
-            </li>
-            {{ end }}
-        </ul>
-        <small>
-            {{ with now.Year }}
-            Copyright &copy; Stian Sørby <time datetime="{{ . }}">{{ . }}</time>
-            {{ end }}
-        </small>
-    </footer>
+        
+        <header class="header | cluster" data-side="right">
+            <button class="nostyle" data-clickable>
+                <i data-feather="menu"></i>
+            </button>
+        </header>
+        
+        {{ block "main" . }}
+        {{ end }}
+        
+        <footer class="footer | center stack">
+            <ul class="cluster" role="list">
+                {{ range .Site.Data.contact.link }}
+                <li>
+                    <a href="{{ .url }}" aria-label="{{ .name }}">
+                        <i data-feather="{{ .icon }}"></i>
+                    </a>
+                </li>
+                {{ end }}
+            </ul>
+            <small>
+                {{ with now.Year }}
+                Copyright &copy; Stian Sørby <time datetime="{{ . }}">{{ . }}</time>
+                {{ end }}
+            </small>
+        </footer>
+        
+    </div>
 
     <script>
         feather.replace()

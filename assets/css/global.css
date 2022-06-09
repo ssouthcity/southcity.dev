@@ -1,11 +1,79 @@
 :root {
-    --clr-primary-400: #FFB470;
+    --clr-primary-400: #2D3047;
+    --clr-accent-400: #FFB470;
+    --clr-neutral-400: #FAFAFA;
+    --clr-text-400: #030303;
 
-    --ratio: 1.6rem;
+    --ratio: 1.5;
+    --scale-0: 1rem;
+    --scale-1: calc(var(--scale-0) * var(--ratio));
+    --scale-2: calc(var(--scale-1) * var(--ratio));
+    --scale-3: calc(var(--scale-2) * var(--ratio));
+    --scale-4: calc(var(--scale-3) * var(--ratio));
+    --scale-5: calc(var(--scale-4) * var(--ratio));
 }
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+body {
+    background-color: var(--clr-neutral-400);
+    font-family: "Roboto", sans-serif;
+    color: var(--clr-text-400);
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Anton", serif;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: var(--scale-3);
+}
+
+h2 {
+    font-size: var(--scale-2);
+}
+
+h3 {
+    font-size: var(--scale-3);
+}
+
+img,
+pre {
+    max-width: 100%;
+}
+
+pre {
+    overflow-x: scroll;
+}
+
+code {
+    display: inline-block;
+    margin: var(--scale-0);
+}
+
+svg {
+    display: block;
+    width: var(--scale-2);
+    height: var(--scale-2);
+}
+
+ul[role="list"] {
+    list-style: none;
+}
+
+a {
+    color: currentColor;
+}
+
+:focus {
+    outline: 2px dashed var(--clr-text-400) !important;
+    outline-offset: calc(var(--scale-0) / 4) !important;
 }
