@@ -1,3 +1,4 @@
 baseURL = 'http://southcity.dev/'
 languageCode = 'en-us'
 title = 'southcity.dev'
+sectionPagesMenu = "main"

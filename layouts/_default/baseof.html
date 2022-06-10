@@ -26,6 +26,35 @@
                 <i data-feather="menu"></i>
             </button>
         </header>
+
+        <nav class="primary-navigation" data-closed>
+            <div class="container">
+                <div class="cluster" data-side="right">
+                    <button class="nostyle" data-clickable>
+                        <i data-feather="x"></i>
+                    </button>
+                </div>
+                <ul class="stack | border" role="list">    
+                    {{ range .Site.Menus.main }}
+                    <li>
+                        {{ $isActive := (or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .)) }}
+                        <a href="{{ .URL }}" class="{{ if $isActive }}stylish-underline{{ end }}">{{ .Name }}</a>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+        </nav>
+
+        <script>
+            const nav = document.querySelector("nav.primary-navigation");
+            const btns = document.querySelectorAll("[data-clickable]");
+
+            btns.forEach((btn) => {
+                btn.addEventListener("click", () => {
+                    nav.toggleAttribute("data-closed");
+                });
+            });
+        </script>
         
         {{ block "main" . }}
         {{ end }}
