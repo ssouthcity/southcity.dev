@@ -78,3 +78,28 @@
 .list-page-list {
     --stack-space: var(--scale-2);
 }
+
+.blog-post header {
+    margin-block: var(--scale-2);
+}
+
+.blog-post > header > .cluster {
+    margin-block: var(--scale-0);
+}
+
+.blog-post > footer span {
+    display: block;
+    font-size: 1.2em;
+}
+
+.pill {
+    display: inline-block;
+    background-color: var(--clr-primary-400);
+    color: var(--clr-neutral-400);
+}
+
+.pill a {
+    display: inline-block;
+    padding: .5rem 1rem;
+    text-decoration: none;
+}

@@ -3,10 +3,10 @@
     <header>
         <time datetime="{{ .Params.Date.Format "2006-01-02" }}">{{ .Params.Date.Format "2006/01/02" }}</time>
         <h1 class="stylish-underline">{{ .Title }}</h1>
-        <ul class="side-by-side" role="list">
+        <ul class="cluster" role="list">
             {{ range (.GetTerms "tags") }}
             <li>
-                <span class="tag">
+                <span class="pill">
                     <a href="{{ .RelPermalink }}">
                         {{ .LinkTitle }}
                     </a>
@@ -15,7 +15,7 @@
             {{ end }}
         </ul>
     </header>
-    <div class="flow">
+    <div class="stack">
         {{ if .Params.thumbnail }}
         {{ with .Resources.GetMatch .Params.thumbnail }}
         <img src="{{ .RelPermalink }}" alt="" />
@@ -23,7 +23,7 @@
         {{ end }}
         {{ .Content }}
     </div>
-    <footer class="columns">
+    <footer class="cluster" data-split>
         <div>
             {{ if .PrevInSection }}
             <span>Previous</span>

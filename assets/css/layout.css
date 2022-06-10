@@ -5,11 +5,17 @@
 .cluster {
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
     gap: var(--cluster-space, var(--scale-0));
 }
 
 .cluster[data-side="right"] {
     justify-content: flex-end;
+}
+
+.cluster[data-split] {
+    justify-content: space-between;
 }
 
 .center {
