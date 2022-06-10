@@ -27,14 +27,14 @@
             </button>
         </header>
 
-        <nav class="primary-navigation" data-closed>
+        <nav class="page-nav" data-closed>
             <div class="container">
-                <div class="cluster" data-side="right">
+                <div class="page-nav-menu cluster" data-side="right">
                     <button class="nostyle" data-clickable>
                         <i data-feather="x"></i>
                     </button>
                 </div>
-                <ul class="stack | border" role="list">    
+                <ul class="page-nav-list | card | stack" role="list">    
                     {{ range .Site.Menus.main }}
                     <li>
                         {{ $isActive := (or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .)) }}
@@ -46,7 +46,7 @@
         </nav>
 
         <script>
-            const nav = document.querySelector("nav.primary-navigation");
+            const nav = document.querySelector("nav.page-nav");
             const btns = document.querySelectorAll("[data-clickable]");
 
             btns.forEach((btn) => {

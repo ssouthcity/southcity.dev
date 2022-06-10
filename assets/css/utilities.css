@@ -2,7 +2,7 @@
     content: "";
     display: block;
     width: 7ch;
-    height: calc(var(--scale-0) / 2);
+    height: .25em;
     background-color: var(--clr-accent-400);
 }
 
@@ -12,9 +12,4 @@
 
 [data-clickable] {
     cursor: pointer;
-}
-
-.border {
-    border: 4px dashed var(--clr-text-400);
-    padding: var(--scale-0);
 }

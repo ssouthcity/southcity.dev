@@ -34,7 +34,7 @@
     cursor: pointer;
 }
 
-.primary-navigation {
+.page-nav {
     position: fixed;
     inset: 0;
     background-color: var(--clr-neutral-400);
@@ -47,19 +47,34 @@
 }
 
 
-.primary-navigation .cluster {
+.page-nav-menu {
     padding-block: var(--scale-2);
 }
 
-.primary-navigation ul {
-    padding: var(--scale-2);
-}
-
-.primary-navigation ul li a {
+.page-nav-list a {
     font-size: var(--scale-1);
     text-decoration: none;
 }
 
-.primary-navigation[data-closed] {
+.page-nav[data-closed] {
     transform: rotateZ(-45deg) translateX(160%);
+}
+
+.card {
+    --stack-space: var(--scale-1);
+
+    border: 4px dashed var(--clr-text-400);
+    padding: var(--scale-1);
+}
+
+.card footer {
+    font-size: 1.1em;
+}
+
+.list-page-header {
+    margin-block: var(--scale-2);
+}
+
+.list-page-list {
+    --stack-space: var(--scale-2);
 }

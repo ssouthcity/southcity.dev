@@ -1,10 +1,12 @@
 {{ define "main" }}
-<main class="flow">
-    <h1 class="partial-underline">{{ .Title }}</h1>
-    <ul role="list" class="flow">
+<main class="list-page stack">
+    <header class="list-page-header">
+        <h1 class="stylish-underline">{{ .Title }}</h1>
+    </header>
+    <ul role="list" class="list-page-list | stack">
         {{ range .Pages }}
             <li>
-                <article class="card | flow">
+                <article class="card | stack">
                     {{ if .Params.thumbnail }}
                     {{ with .Resources.GetMatch .Params.thumbnail }}
                     <img src="{{ .RelPermalink }}" alt="" />
@@ -12,7 +14,7 @@
                     {{ end }}
                     <h2>{{ .Title }}</h2>
                     <p>{{ .Summary }}</p>
-                    <div class="side-by-side">
+                    <footer class="cluster">
                         {{ range $key, $val := .Params.links }}
                         <a href="{{ $val }}">
                             {{ $key | humanize }}
@@ -22,7 +24,7 @@
                             Read article
                         </a>
                         {{ end }}
-                    </div>
+                    </footer>
                 </article>
             </li>
         {{ end }}
