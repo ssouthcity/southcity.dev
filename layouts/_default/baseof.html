@@ -1,89 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>southcity.dev</title>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton|Roboto">
+    <!DOCTYPE html>
+    <html lang="en">
 
-    {{/*  {{ $style := resources.Get "sass/main.scss" | toCSS | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">  */}}
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>southcity.dev</title>
 
-    {{ $stylesheet := resources.Match "css/*.css" | resources.Concat "css/bundle.css" | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $stylesheet.RelPermalink }}" integrity="{{ $stylesheet.Data.Integrity }}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anton|Roboto">
 
-    <script src="https://unpkg.com/feather-icons"></script>
-</head>
-<body>
+        {{ $opts := dict "transpiler" "dartsass" }}
+        {{ $scss := resources.Get "sass/main.scss" }}
+        {{ $style := $scss | toCSS $opts | minify | fingerprint }}
+        <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
 
-    <div class="container">
+        {{/* {{ $stylesheet := resources.Match "css/*.css" | resources.Concat "css/bundle.css" | minify | fingerprint }}
+        <link rel="stylesheet" href="{{ $stylesheet.RelPermalink }}" integrity="{{ $stylesheet.Data.Integrity }}"> */}}
 
-        
-        <header class="header | cluster" data-side="right">
-            <button class="nostyle" data-clickable>
-                <i data-feather="menu"></i>
-            </button>
-        </header>
+        <script src="https://unpkg.com/feather-icons"></script>
+    </head>
 
-        <nav class="page-nav" data-closed>
-            <div class="container">
-                <div class="page-nav-menu cluster" data-side="right">
-                    <button class="nostyle" data-clickable>
-                        <i data-feather="x"></i>
-                    </button>
+    <body>
+
+        <div class="container">
+
+
+            <header class="header | cluster" data-side="right">
+                <button class="nostyle" data-clickable>
+                    <i data-feather="menu"></i>
+                </button>
+            </header>
+
+            <nav class="page-nav" data-closed>
+                <div class="container">
+                    <div class="page-nav-menu cluster" data-side="right">
+                        <button class="nostyle" data-clickable>
+                            <i data-feather="x"></i>
+                        </button>
+                    </div>
+                    <ul class="page-nav-list | card | stack" role="list">
+                        {{ range .Site.Menus.main }}
+                        <li>
+                            {{ $isActive := (or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .)) }}
+                            <a href="{{ .URL }}" class="{{ if $isActive }}stylish-underline{{ end }}">{{ .Name }}</a>
+                        </li>
+                        {{ end }}
+                    </ul>
                 </div>
-                <ul class="page-nav-list | card | stack" role="list">    
-                    {{ range .Site.Menus.main }}
-                    <li>
-                        {{ $isActive := (or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .)) }}
-                        <a href="{{ .URL }}" class="{{ if $isActive }}stylish-underline{{ end }}">{{ .Name }}</a>
-                    </li>
-                    {{ end }}
-                </ul>
-            </div>
-        </nav>
+            </nav>
 
-        <script>
+            <script>
             const nav = document.querySelector("nav.page-nav");
             const btns = document.querySelectorAll("[data-clickable]");
-
+            
             btns.forEach((btn) => {
                 btn.addEventListener("click", () => {
                     nav.toggleAttribute("data-closed");
                 });
             });
+            </script>
+
+            {{ block "main" . }}
+            {{ end }}
+
+            <footer class="footer | center stack">
+                <ul class="cluster" role="list">
+                    {{ range .Site.Data.contact.link }}
+                    <li>
+                        <a href="{{ .url }}" aria-label="{{ .name }}">
+                            <i data-feather="{{ .icon }}"></i>
+                        </a>
+                    </li>
+                    {{ end }}
+                </ul>
+                <small>
+                    {{ with now.Year }}
+                    Copyright &copy; Stian Sørby <time datetime="{{ . }}">{{ . }}</time>
+                    {{ end }}
+                </small>
+            </footer>
+
+        </div>
+
+        <script>
+            feather.replace()
         </script>
-        
-        {{ block "main" . }}
-        {{ end }}
-        
-        <footer class="footer | center stack">
-            <ul class="cluster" role="list">
-                {{ range .Site.Data.contact.link }}
-                <li>
-                    <a href="{{ .url }}" aria-label="{{ .name }}">
-                        <i data-feather="{{ .icon }}"></i>
-                    </a>
-                </li>
-                {{ end }}
-            </ul>
-            <small>
-                {{ with now.Year }}
-                Copyright &copy; Stian Sørby <time datetime="{{ . }}">{{ . }}</time>
-                {{ end }}
-            </small>
-        </footer>
-        
-    </div>
 
-    <script>
-        feather.replace()
-    </script>
-
-    <script>
-        if (window.netlifyIdentity) {
+        <script>
+            if (window.netlifyIdentity) {
           window.netlifyIdentity.on("init", user => {
             if (!user) {
               window.netlifyIdentity.on("login", () => {
@@ -92,7 +97,8 @@
             }
           });
         }
-    </script>
+        </script>
 
-</body>
-</html>
+    </body>
+
+    </html>
