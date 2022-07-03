@@ -5,28 +5,28 @@
     </header>
     <ul role="list" class="list-page-list | stack">
         {{ range .Pages }}
-            <li>
-                <article class="card | stack">
-                    {{ if .Params.thumbnail }}
-                    {{ with .Resources.GetMatch .Params.thumbnail }}
-                    <img src="{{ .RelPermalink }}" alt="" />
+        <li>
+            <article class="card | stack">
+                {{ if .Params.thumbnail }}
+                {{ with .Resources.GetMatch .Params.thumbnail }}
+                <img src="{{ .RelPermalink }}" alt="" />
+                {{ end }}
+                {{ end }}
+                <h2>{{ .Title }}</h2>
+                <p>{{ .Summary }}</p>
+                <footer class="cluster">
+                    {{ range .Params.links }}
+                    <a href="{{ .url }}">
+                        {{ .name | humanize }}
+                    </a>
+                    {{ else }}
+                    <a href="{{ .RelPermalink }}">
+                        Read article
+                    </a>
                     {{ end }}
-                    {{ end }}
-                    <h2>{{ .Title }}</h2>
-                    <p>{{ .Summary }}</p>
-                    <footer class="cluster">
-                        {{ range $key, $val := .Params.links }}
-                        <a href="{{ $val }}">
-                            {{ $key | humanize }}
-                        </a>
-                        {{ else }}
-                        <a href="{{ .RelPermalink }}">
-                            Read article
-                        </a>
-                        {{ end }}
-                    </footer>
-                </article>
-            </li>
+                </footer>
+            </article>
+        </li>
         {{ end }}
     </ul>
 </main>
