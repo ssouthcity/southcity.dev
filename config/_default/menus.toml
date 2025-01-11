@@ -1,0 +1,10 @@
+[[main]]
+  name = "Blog"
+  pageRef = "posts"
+  weight = 10
+
+[[main]]
+  identifier = "github"
+  pre = "github"
+  url = "https://github.com/ssouthcity"
+  weight = 100

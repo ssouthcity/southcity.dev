@@ -1,0 +1,27 @@
+colorScheme = "avocado"
+enableSearch = true
+enableCodeCopy = true
+highlightCurrentMenuArea = true
+smartToc = true
+smartTOCHideUnfocusedChildren = true
+
+[author]
+name = "southcity"
+image = "img/author.png"
+headline = "DevOps, Platform Engineering, Cyber Security"
+bio = "Known tinkerer, will spend more time configuring hardware/software than I spend using it."
+links = [
+  { github = "https://github.com/ssouthcity" },
+  { docker = "https://hub.docker.com/u/ssouthcity" }
+]
+
+[article]
+showAuthor = false
+showTaxonomies = true
+showWordCount = false
+showTableOfContents = true
+sharingLinks = ["bluesky", "mastodon", "twitter", "reddit"]
+
+[list]
+showSummary = true
+groupByYear = false
