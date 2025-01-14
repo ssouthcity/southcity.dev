@@ -15,13 +15,27 @@ links = [
   { docker = "https://hub.docker.com/u/ssouthcity" }
 ]
 
+[homepage]
+showRecent = true
+
 [article]
 showAuthor = false
 showTaxonomies = true
 showWordCount = false
 showTableOfContents = true
 sharingLinks = ["bluesky", "mastodon", "twitter", "reddit"]
+showViews = true
+showLikes = true
 
 [list]
 showSummary = true
 groupByYear = false
+
+[firebase]
+apiKey = "AIzaSyCfduekizVPFEurY_cDMFh-2WljRGl_K4I"
+authDomain = "southcity-dev.firebaseapp.com"
+projectId = "southcity-dev"
+storageBucket = "southcity-dev.firebasestorage.app"
+messagingSenderId = "225482978733"
+appId = "1:225482978733:web:73c3e0e1cbfbe072cfdd24"
+measurementId = "G-46G3TYRE6C"

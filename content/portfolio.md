@@ -4,6 +4,8 @@ title = 'Portfolio'
 [cascade]
 showDate = false
 showReadingTime = false
+showViews = false
+showLikes = false
 +++
 
 {{< timeline >}}
